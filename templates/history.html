@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block controls %}
+	{% if user %}
+		<a class="login-link" href="/_edit{{path}}">Edit</a>
+		|
+	{% endif %}
+		<a class="login-link" href="{{path}}">View</a>
+{% endblock %}
+
+{% block content %}
+	<table>
+		<tr>
+			<th>Date Modified</th>
+			<th>Content</th>
+			<th>View</th>
+
+				{% if user %}
+				<th>Edit</th>
+				{% endif %}
+		</tr>
+		{% for p in posts %}
+			<tr>
+				<td>{{p.last_modified.strftime("%c")}}</td>
+				<td>{{p.content[:100]}}</td>
+				<td class="view-edit"><a href="{{path}}?v={{p.key().id()}}">View</a></td>
+					{% if user %}
+           				<td class="view-edit"><a href="/_edit{{path}}?v={{p.key().id()}}">Edit</a></td>
+					{% endif %}
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

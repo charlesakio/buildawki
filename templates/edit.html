@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block controls %}
+	{% if page %}
+		<a class="login-link" href="{{path}}">View</a>
+		|
+		<a class="login-link" href="/_history{{path}}">History</a>
+	{% endif %}
+{% endblock %}
+
+	
+{% block content %}
+	<form class="main-edit" method="POST">
+		<textarea id="text-entry" name="content" required>{{page and page.content or ""}}</textarea>
+
+		<div class="error">{{error}}</div>
+
+		<br>
+		<div class="form-footer">
+			<button type="submit" class="save">Save</button>
+			<button><a href={{path}} class="cancel">Cancel</a></button>
+		</div>
+	</form>
+{% endblock %}

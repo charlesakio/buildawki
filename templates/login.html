@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Login</h2>
+      <form method="post">
+        <fieldset class="account-info">
+          <label>
+              Username
+              <input type="text" name="username" value="{{username}}">
+          </label>
+
+          <label>
+              Password
+              <input type="password" name="password" value="">
+          </label>
+
+          <div class="error">
+              {{error}}
+          </div> 
+         </fieldset> 
+
+         <fieldset class="account-action">
+           <input type="submit" name="submit">
+        </fieldset>
+    </form>
+{% endblock %}
+

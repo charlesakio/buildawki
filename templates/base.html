@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	 <link type="text/css" rel="stylesheet" href="/static/main.css"/>
+
+		<title>Wiki App - Charles Javelona</title>
+	</head>
+
+<body>
+
+	<div class="header">
+		<div class="controls">
+				{% if user %}
+					{{user.name.upper()}}(<a class="login-link" href="/logout">Logout</a>)
+				{% else %}
+					<a class="login-link" href="/signup">Signup</a>
+					|
+					<a class="login-link" href="/login">Login</a>
+				{% endif %}
+		</div>
+
+		<div class="controls">
+			{% block controls %}
+			{% endblock %}
+		</div>
+
+		<div class="clear"></div>
+	</div>
+
+	<div class="content">
+		{% block content %}
+		{% endblock %}
+	</div>
+
+	</body>
+
+</html>

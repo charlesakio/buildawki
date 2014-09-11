@@ -1,0 +1,146 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+
+    width: 800px;
+    margin: 0 auto;
+    color: #333;
+    padding: 30px;
+}
+
+.header {
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+ 
+.controls {
+    float: right;
+    font-size: 13px;
+    color: gray;
+}
+
+.controls + .controls {
+    margin-right: 20px;
+}
+
+.login-link {
+    color: gray;
+    text-decoration: none;
+}
+
+.login-link:visited {
+    color: gray;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+.view-edit {
+    text-align: right;
+}
+
+.error {
+    color: red
+}
+
+.main-edit {
+
+}
+
+.main-edit textarea {
+    height 450px;
+    width: 100%;
+}
+
+.form-footer {
+    float: right;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 30px;
+}
+
+.main-edit button {
+    font-size: 16px;
+}
+
+.main-title {
+    display: block;
+    color: #222;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+.post-heading {
+    position: relative;
+    border-bottom: 3px solid #666;
+}
+
+.post-date {
+    float: right;
+    right: 0px;
+    padding: 10px;
+    color: #999;
+}
+
+.post-content {
+    margin-top: 5px;
+}
+
+textarea {
+  width: 500px;
+  height: 400px;
+  font-size: 17px;
+  font-family: monospace;
+}
+
+a {
+    color: #000000;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding:6px 18px 5px 18px;
+}
+
+
+table {
+  width: 600px;
+}
+
+th, td {
+    padding: 7px 10px 10px 10px;
+}
+
+th {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 90%;
+    border-bottom: 2px solid #111111;
+    border-top: 1px solid #999;
+    text-align: left;
+    background-color: #efefef;
+}
+
+tr:hover { 
+    background-color: #c3e6e5;
+}
+
+
+
+#time-table, #table-content, #table-view, #table-edit {
+    padding: 1px 0px 1px 0px;
+} 
+
+
+
+

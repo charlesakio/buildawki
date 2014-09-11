@@ -1,0 +1,17 @@
+<div class="post">
+  <div class="post-heading">
+  </div>
+
+  <div class="post-content">
+    {{p._render_text | safe}}
+  </div>
+
+  <div class="post-date">
+  	{% if p.author == None %}
+    	Last author: {{None}}<br><br>
+    {% else %}
+    	Last author: {{p.author}}<br><br>
+    {% endif %}
+    	Last edit: {{p.created.strftime("%b %d, %Y")}}
+    </div>
+</div>
