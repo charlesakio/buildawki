@@ -2,7 +2,7 @@ Buildawiki
 ==========
 The final project for Udacity CS253, it is a functional wiki that can make simple webpages.
 
-Features
+Features<br>
   1.) Login page
   2.) Signup page
   3.) Cookies for security
