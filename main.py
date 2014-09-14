@@ -192,52 +192,6 @@ class Logout(Handler):
 		self.redirect("/login")
 
 
-def wiki_key(name='default'):	#Key for pages
-	return db.Key.from_path('wiki', name)
-
-class Page(db.Model):
-	content = db.TextProperty()
-	author = db.StringProperty()
-	created = db.DateTimeProperty(auto_now_add=True)
-	last_modified = db.DateTimeProperty(auto_now=True)
-
-	@staticmethod
-	def parent_key(path):
-		return db.Key.from_path("/root" + path, "pages")
-
-	@classmethod
-	def by_id(cls, page_id, path):
-		return cls.get_by_id(page_id, cls.parent_key(path))
-
-	@classmethod
-	def by_path(cls, path):
-		query = cls.all()
-		query.ancestor(cls.parent_key(path))
-		query.order("-created")
-		return query
-
-	@classmethod
-	def version_control(cls, version, path):
-		"""
-		Takes the current version number
-		Then finds it in the database to return to a variable called page
-		"""
-		page = None
-
-		if version:
-			if version.isdigit():
-				page = cls.by_id(int(version), path)
-
-			if not page:
-				return self.notfound()
-		else:
-			page = cls.by_path(path).get()
-
-		return page
-
-	def render(self): #Creates space for content 
-		self._render_text = self.content.replace('\n', '<br>')
-		return render_str("post.html", p=self)
 
 
 class HistoryPage(Handler):
